@@ -1,18 +1,18 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/as_logo.png">
-    <HelloWorld msg="Welcome to Group AS App"/>
+    <HomeCompo msg="Welcome to Group AS App"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import HomeCompo from '@/components/HomeCompo.vue';
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    HomeCompo
   }
 }
 </script>
