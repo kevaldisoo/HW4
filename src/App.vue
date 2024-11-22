@@ -83,4 +83,8 @@ nav a.router-link-exact-active {
 .login-button:hover {
     background-color: #0056b3;  /* Darker shade on hover */
 }
+.error-message {
+  color: red;
+  font-size: 0.9em;
+}
 </style>
