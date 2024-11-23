@@ -1,10 +1,21 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
+    <router-link to="/">Posts</router-link> |
     <router-link to="/SignUp">Sign up!</router-link>
   </nav>
   <router-view/>
 </template>
+
+<script>
+import Posts from './views/HomeView.vue';
+
+export default {
+  name: 'App',
+  components: {
+    Posts,
+  },
+};
+</script>
 
 <style>
 #app {
