@@ -1,5 +1,8 @@
 <template>
   <div>
+    <button @click="resetAllLikes" class="reset-likes-button">
+        Reset Likes
+      </button>
     <div v-for="post in posts" :key="post.id" class="post">
       <p><strong>User: </strong>{{ post.user }}</p>
       <p><strong>Date:</strong> {{ post.date }}</p>
@@ -9,9 +12,7 @@
         👍
       </button>
       <p>{{ post.likes }} Likes</p>
-      <button @click="resetAllLikes" class="reset-likes-button">
-        Reset Likes
-      </button>
+      
     </div>
   </div>
 </template>
@@ -61,7 +62,7 @@ export default {
 .feed {
     width: 100%;
     padding: 20px;
-    display: flex;
+    display: table-column;
     flex-direction: column;
     gap: 20px;
 }
