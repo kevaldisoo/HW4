@@ -4,14 +4,21 @@
             Reset Likes
         </button>
         <div v-for="post in posts" :key="post.id" class="post">
-            <p><strong>User: </strong>{{ post.user }}</p>
-            <p><strong>Date:</strong> {{ post.date }}</p>
-            <p><strong>Post:</strong> {{ post.post }}</p>
+          <div class="post-header">
+            <div class="user-profile">
+            <img v-if="post.profile" :src="post.profile" alt="post-profile-pic" />
+            <p class="Username">{{ post.user }}</p>
+            </div>
+            <p class="post-date"><strong>Date:</strong> {{ post.date }}</p>
+          </div>
+            <p class="post-text"><strong>Post:</strong> {{ post.post }}</p>
             <img v-if="post.img" :src="post.img" alt="Post Image" />
-            <button @click="likePost(post.id)" class="like-button">
-              👍
-            </button>
+            <div class="likes">
+              <button @click="likePost(post.id)" class="like-button">
+                👍
+              </button>
             <p>{{ post.likes }} Likes</p>
+            </div>
         </div>
     </div>
 </template>
@@ -80,17 +87,30 @@ export default {
     display: flex;
     flex-direction: column;
     width: 500px;
+    margin-bottom: 50px;
 }
 
 .post-header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
 }
+.likes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user-profile{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
 
-.post-profile-pic {
-    width: 30px;
-    height: 30px;
+
+.post-header img {
+    width: 50px;
+    height: 50px;
     background-color: #ccc;
     border-radius: 50%;
     margin-right: 10px;
@@ -99,15 +119,6 @@ export default {
 .post-date {
     font-size: 0.9em;
     color: #777;
-}
-
-.post-image {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    align-self: center;
 }
 
 .post-text {
@@ -122,6 +133,7 @@ export default {
     border-radius: 5px;
     width: 60px;
     color: white;
+    margin-right: 10px;
 }
 
 .like-button:hover {

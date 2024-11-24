@@ -1,11 +1,11 @@
 <template>
     <div>
         <div class="layout">
-            <Header :logo="logoPath"></Header>
+          <Header :logo="logoPath"></Header>
                 <div class="content">
                     <router-view/>
                 </div>
-            <Footer :logo="logoPath"></Footer>
+          <Footer :logo="logoPath"></Footer>
         </div>
     </div>
 </template>
@@ -20,8 +20,8 @@ export default {
     Header, 
     Footer
   },
-  data() {
-    return {
+  data(){
+    return{
       logoPath: require('@/assets/as_logo.png')
     }
   }
@@ -53,9 +53,6 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
 nav {
@@ -188,6 +185,7 @@ nav a.router-link-exact-active {
 .post-date {
     font-size: 0.9em;
     color: #777;
+    text-align: left;
 }
 
 .post-image {
@@ -197,6 +195,9 @@ nav a.router-link-exact-active {
     border-radius: 8px;
     margin-bottom: 10px;
     align-self: center;
+}
+.username {
+  text-align: left;
 }
 
 .post-text {

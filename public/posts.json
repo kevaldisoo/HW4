@@ -2,14 +2,16 @@
     "posts": [
         {
             "id": 1,
+            "profile": "https://raw.githubusercontent.com/RaioMitt/HW3/main/src/assets/karl.jpg",
             "user": "Karl",
-            "img": "https://github.com/RaioMitt/WAD24_HW1/raw/main/img/halloween.jpg",
+            "img": "https://raw.githubusercontent.com/RaioMitt/HW3/main/src/assets/halloween.jpg",
             "date": "Oct 31, 2024",
             "post": "Happy halloween!",
             "likes": 0
         },
         {
             "id": 2,
+            "profile": "https://raw.githubusercontent.com/RaioMitt/HW3/main/src/assets/raio.png",
             "user": "Raio",
             "img": null,
             "date": "Oct 28, 2024",
@@ -18,6 +20,7 @@
         },
         {
             "id": 3,
+            "profile": "https://raw.githubusercontent.com/RaioMitt/HW3/main/src/assets/sander.jpg",
             "user": "Sander",
             "img": null,
             "date": "Oct 24, 2024",
@@ -26,14 +29,16 @@
         },
         {
             "id": 4,
+            "profile": "https://raw.githubusercontent.com/RaioMitt/HW3/main/src/assets/coop.jpg",
             "user": "COOP",
-            "img": "https://github.com/RaioMitt/WAD24_HW1/raw/main/img/ujula_konsum.jpg",
+            "img": "https://raw.githubusercontent.com/RaioMitt/HW3/main/src/assets/ujula_konsum.jpg",
             "date": "Oct 18, 2024",
             "post": "I do not use this word lightly, but this store is GOATED",
-            "likes": 1
+            "likes": 0
         },
         {
             "id": 5,
+            "profile": "https://raw.githubusercontent.com/RaioMitt/HW3/main/src/assets/pfp.jpg",
             "user": "Rene Descartes",
             "img": null,
             "date": "Oct 15, 2024",
@@ -42,15 +47,17 @@
         },
         {
             "id": 6,
+            "profile": "https://raw.githubusercontent.com/RaioMitt/HW3/main/src/assets/pfp.jpg",
             "user": "Meelis Lendav",
-            "img": "https://github.com/RaioMitt/WAD24_HW1/raw/main/img/ryytli.png",
+            "img": "https://raw.githubusercontent.com/RaioMitt/HW3/main/src/assets/ryytli.png",
             "date": "Oct 6, 2024",
             "post": "Rüütli street 10 years ago",
             "likes": 0
         },
         {
             "id": 7,
-            "user": "EgonVM",
+            "profile": "https://raw.githubusercontent.com/RaioMitt/HW3/main/src/assets/delta.jpg",
+            "user": "Delta",
             "img": null,
             "date": "Oct 5, 2024",
             "post": "What are you doing this weekend?",
@@ -58,6 +65,7 @@
         },
         {
             "id": 8,
+            "profile": "https://raw.githubusercontent.com/RaioMitt/HW3/main/src/assets/garfield.jpg",
             "user": "Garfield",
             "img": null,
             "date": "Oct 4, 2024",
@@ -66,14 +74,16 @@
         },
         {
             "id": 9,
+            "profile": "https://raw.githubusercontent.com/RaioMitt/HW3/main/src/assets/sponge.png",
             "user": "Spongebob Squarepants",
-            "img": "https://github.com/RaioMitt/WAD24_HW1/raw/main/img/sad.jpg",
+            "img": "https://raw.githubusercontent.com/RaioMitt/HW3/main/src/assets/sad.jpg",
             "date": "Oct 4, 2024",
             "post": "MFW I have to wake up 6 am",
             "likes": 0
         },
         {
             "id": 10,
+            "profile": "https://raw.githubusercontent.com/RaioMitt/HW3/main/src/assets/as_logo.png",
             "user": "AS",
             "img": null,
             "date": "Oct 2, 2024",
