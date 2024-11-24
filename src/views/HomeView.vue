@@ -1,20 +1,19 @@
 <template>
-  <div>
-    <button @click="resetAllLikes" class="reset-likes-button">
-        Reset Likes
-      </button>
-    <div v-for="post in posts" :key="post.id" class="post">
-      <p><strong>User: </strong>{{ post.user }}</p>
-      <p><strong>Date:</strong> {{ post.date }}</p>
-      <p><strong>Post:</strong> {{ post.post }}</p>
-      <img v-if="post.img" :src="post.img" alt="Post Image" />
-      <button @click="likePost(post.id)" class="like-button">
-        👍
-      </button>
-      <p>{{ post.likes }} Likes</p>
-      
+    <div class="post-container">
+        <button @click="resetAllLikes" class="reset-likes-button">
+            Reset Likes
+        </button>
+        <div v-for="post in posts" :key="post.id" class="post">
+            <p><strong>User: </strong>{{ post.user }}</p>
+            <p><strong>Date:</strong> {{ post.date }}</p>
+            <p><strong>Post:</strong> {{ post.post }}</p>
+            <img v-if="post.img" :src="post.img" alt="Post Image" />
+            <button @click="likePost(post.id)" class="like-button">
+              👍
+            </button>
+            <p>{{ post.likes }} Likes</p>
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -46,6 +45,13 @@ export default {
   
 /* Home page */
 
+.post-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .home-page {
     width: 400px;
     margin: 50px auto;
@@ -62,8 +68,7 @@ export default {
 .feed {
     width: 100%;
     padding: 20px;
-    display: table-column;
-    flex-direction: column;
+    display: flex;
     gap: 20px;
 }
 
@@ -74,7 +79,7 @@ export default {
     border: 1px solid orange;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 500px;
 }
 
 .post-header {
@@ -135,7 +140,7 @@ export default {
     width: 40px;
 }
 .reset-likes-button {
-  margin-top: 20px;
+  margin: 20px;
   padding: 10px;
   background-color: #ff0000;
   color: white;

@@ -1,23 +1,47 @@
 <template>
-  <nav>
-    <router-link to="/">Posts</router-link> |
-    <router-link to="/SignUp">Sign up!</router-link>
-  </nav>
-  <router-view/>
+    <div>
+        <div class="layout">
+            <Header></Header>
+                <div class="content">
+                    <router-view/>
+                </div>
+            <Footer></Footer>
+        </div>
+    </div>
 </template>
 
 <script>
-import Posts from './views/HomeView.vue';
+import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
 
 export default {
   name: 'App',
   components: {
-    Posts,
+    Header, 
+    Footer
   },
 };
 </script>
 
 <style>
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color:beige;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the layout spans the full height */
+}
+
+.content {
+  flex: 1;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -27,16 +51,17 @@ export default {
 }
 
 nav {
-  padding: 30px;
+  padding: 20px;
 }
 
 nav a {
   font-weight: bold;
   color: #2c3e50;
+  text-decoration: none;
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: orangered;
 }
 
 /* Login page */
