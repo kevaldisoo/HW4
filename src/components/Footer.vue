@@ -1,6 +1,7 @@
 <template>
     <div class="footer">
-        <p>Copyright &copy; 2024 Group AS</p>
+        <img :src="logo" alt="Logo" class="logo" />
+        <p>Copyright &copy; 2024 Group AS. All rights reserved.</p>
         <h4>Links to the resources of this course</h4>
         <a href="https://ois2.ut.ee/#/courses/LTAT.05.004/version/4db291d6-0997-e142-b9d4-9ee95cdacf20/details" target="_blank" rel="noopener">OIS</a>
         <a href="https://courses.cs.ut.ee/2024/WAD/fall" target="_blank" rel="noopener">Courses</a>
@@ -10,6 +11,12 @@
 <script>
     export default {
         name: 'Footer',
+        props: {
+            logo: {
+                type: String,
+                required: true,
+            }
+        }
     }
 </script>
 
@@ -17,12 +24,16 @@
     .footer {
         background: #343a40;
         color: white;
-        padding: 10px;
+        padding: 30px;
         text-align: center;
         position: static;
         bottom: 0;
         width: 100%;
         gap: 20px;
+    }
+    .logo {
+        height: 40px;
+        border-radius: 0.6em;
     }
     a {
         margin: 20px;

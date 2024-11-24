@@ -1,11 +1,11 @@
 <template>
     <div>
         <div class="layout">
-            <Header></Header>
+            <Header :logo="logoPath"></Header>
                 <div class="content">
                     <router-view/>
                 </div>
-            <Footer></Footer>
+            <Footer :logo="logoPath"></Footer>
         </div>
     </div>
 </template>
@@ -20,6 +20,11 @@ export default {
     Header, 
     Footer
   },
+  data() {
+    return {
+      logoPath: require('@/assets/as_logo.png')
+    }
+  }
 };
 </script>
 
@@ -48,6 +53,9 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 nav {
