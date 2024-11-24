@@ -17,7 +17,9 @@
         placeholder="Password" 
         required 
       />
-      <p v-if="passwordError" class="error-message">{{ passwordError }}</p>
+      <ul v-if="passwordErrors.length" class="error-message">
+        <li v-for="(error, index) in passwordErrors" :key="index">{{ error }}</li>
+      </ul>
       <br />
       <button type="submit" class="login-button">Sign Up</button>
     </form>
@@ -26,39 +28,29 @@
 </template>
 
 <script>
-import { validatePassword } from "../js/signup.js";
+import { validatePassword } from "@/js/signup.js";
 
 export default {
   data() {
     return {
       email: "",
       password: "",
-      passwordError: "",
+      passwordErrors: [],
     };
   },
   methods: {
     handleSignup() {
       // Clear previous error
-      this.passwordError = "";
+      this.passwordErrors = [];
 
       // Validate password
-      const validationMessage = validatePassword(this.password);
-      if (validationMessage) {
-        this.passwordError = validationMessage;
-        return; // Stop submission if validation fails
+      this.passwordErrors = validatePassword(this.password)
+      if(this.passwordErrors.length){
+        return;
       }
-
-      // Proceed with form submission
-      alert("Signup successful!");
+      
+      alert("Signup was successful!");
     },
   },
 };
 </script>
-
-
-<style>
-.error-message {
-  color: red;
-  font-size: 0.9em;
-}
-</style>
