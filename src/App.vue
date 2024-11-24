@@ -22,7 +22,7 @@ export default {
   },
   data(){
     return{
-      logoPath: require('@/assets/as_logo.png')
+        logoPath: require('@/assets/as_logo.png')
     }
   }
 };
@@ -32,9 +32,12 @@ export default {
 html, body {
   height: 100%;
   margin: 0;
-  background-color:beige;
+  background-color: rgb(46, 46, 187);
   overflow-x: hidden;
   width: 100%;
+  background-image: url('@/assets/estonia2.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 .layout {
@@ -142,105 +145,8 @@ nav a.router-link-exact-active {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background-color: orangered;
+    background-color: rgb(20, 20, 20);
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.feed {
-    max-width: 200px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-}
-
-.post {
-    margin-bottom: 20px;
-    background-color: orange;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid orange;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50%;
-}
-
-.post-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.post-profile-pic {
-    width: 30px;
-    height: 30px;
-    background-color: #ccc;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.post-date {
-    font-size: 0.9em;
-    color: #777;
-    text-align: left;
-}
-
-.post-image {
-    width: 10%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    align-self: center;
-}
-.username {
-  text-align: left;
-}
-
-.post-text {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-}
-
-.like-button {
-    cursor: pointer;
-    background-color: #0066cc;
-    padding: 10px;
-    border-radius: 5px;
-    width: 60px;
-    color: white;
-}
-
-.like-button:hover {
-    background-color: #004a99;
-}
-
-.post-image + .post-text {
-    font-weight: bold;
-    color: #333;
-}
-
-.post-text ~ .like-button {
-    background-color: #0066cc;
-    padding: 10px;
-    border-radius: 5px;
-    width: 40px;
-}
-.reset-likes-button {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #ff0000;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  justify-content: right;
-}
-
-.reset-likes-button:hover {
-  background-color: #cc0000;
 }
 </style>

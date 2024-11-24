@@ -65,7 +65,7 @@ export default {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 100%;
+  width: 25%;
   max-width: 400px;
   align-self: center;
   margin-top: 20px;

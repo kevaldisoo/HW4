@@ -36,10 +36,10 @@ export default {
 </script>
 <style>
     .post {
-    background-color: orange;
+    background-color: rgb(230, 222, 222);
     padding: 10px;
     border-radius: 8px;
-    border: 1px solid orange;
+    border: 1px solid rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     width: 500px;
@@ -70,6 +70,9 @@ export default {
     background-color: #ccc;
     border-radius: 50%;
     margin-right: 10px;
+}
+.post-header p {
+    font-size: 1.1em;
 }
 
 .post-date {

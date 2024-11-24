@@ -1,6 +1,6 @@
 <template>
   <div class="login-container">
-    <h2>Welcome to SignUp</h2>
+    <h2>Welcome to Estonia</h2>
     <p>Please sign up</p>
     <form @submit.prevent="handleSignup">
       <input 
@@ -49,7 +49,7 @@ export default {
         return;
       }
       
-      alert("Signup was successful!");
+      alert("Signup was successful! YOU ARE NOW ESTONIAN!");
     },
   },
 };
