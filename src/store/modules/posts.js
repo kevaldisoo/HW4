@@ -1,6 +1,6 @@
 
 const state = {
-    posts: [],
+    posts: JSON.parse(localStorage.getItem('posts')) || [],
 };
 
 const getters = {
@@ -10,12 +10,14 @@ const getters = {
 const actions = {
     async fetchPosts({ commit }) {
         try {
-            const response = await fetch('/posts.json');
-            if (!response.ok) {
-                throw new Error('HTTP error! Status: ${response.status}');
-            }
-            const data = await response.json();
-            commit ('setPosts', data.posts);
+            if (state.posts.length === 0) {
+                const response = await fetch('/posts.json');
+                if (!response.ok) {
+                  throw new Error('HTTP error! Status: ${response.status}');
+                }
+                const data = await response.json();
+                commit('setPosts', data.posts);
+              }
         } catch (error) {
             console.error('Error fetching posts: ', error)
         }
@@ -31,17 +33,20 @@ const actions = {
 const mutations = {
     setPosts: (state, posts) => {
         state.posts = posts;
+        
     },
     incrementLike: (state, postId) => {
         const post = state.posts.find((post) => post.id === postId);
         if (post) {
             post.likes++;
+            localStorage.setItem('posts', JSON.stringify(state.posts));
         } 
     },
     resetLikes: (state) => {
         state.posts.forEach(post => {
             post.likes = 0;
         })
+        localStorage.setItem('posts', JSON.stringify(state.posts));
     }
 };
 
