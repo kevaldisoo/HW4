@@ -17,11 +17,8 @@
           placeholder="Password" 
           required 
         />
-        <ul v-if="passwordErrors.length" class="error-message">
-          <li v-for="(error, index) in passwordErrors" :key="index">{{ error }}</li>
-        </ul>
         <br/>
-      <button type="submit" class="login-button">Login</button>
+      <button @click="LogIn" type="submit" class="login-button">Login</button>
       </form>
     </br>
       <h3>OR</h3>
@@ -32,7 +29,7 @@
   </template>
   
   <script>
-  export default {
+ export default {
 name: "LogIn", 
 
 data: function() {
@@ -71,6 +68,5 @@ LogIn() {
     },
   }, 
   }
-
   </script>
   
