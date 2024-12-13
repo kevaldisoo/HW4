@@ -4,7 +4,7 @@
         <nav>
             <ul>
                 <li><router-link to="/">Posts</router-link></li>
-                <li><router-link to="/SignUp">Sign up</router-link></li>
+                <li><router-link to="/Login">Login</router-link></li>
             </ul>
         </nav>
     </div>

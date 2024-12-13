@@ -35,7 +35,7 @@ html, body {
   background-color: rgb(46, 46, 187);
   overflow-x: hidden;
   width: 100%;
-  background-image: url('@/assets/estonia2.jpg');
+  background-image: url('@/assets/snow.gif');
   background-size: cover;
   background-position: center;
 }
