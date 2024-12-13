@@ -2,7 +2,6 @@
   <div class="login-container">
     <h2>Welcome to Estonia</h2>
     <p>Please sign up</p>
-    <form @submit.prevent="handleSignup">
       <input 
         type="email" 
         id="email" 
@@ -21,8 +20,7 @@
         <li v-for="(error, index) in passwordErrors" :key="index">{{ error }}</li>
       </ul>
       <br/>
-      <button type="submit" class="login-button">Sign Up</button>
-    </form>
+      <button @click="SignUp" type="submit" class="login-button">Sign Up</button>
     <h3>Forgot password?</h3>
   </div>
 </template>
@@ -31,6 +29,7 @@
 import { validatePassword } from "@/js/signup.js";
 
 export default {
+  name: "SignUp",
   data() {
     return {
       email: "",
@@ -39,6 +38,7 @@ export default {
     };
   },
   methods: {
+    /*
     handleSignup() {
       // Clear previous error
       this.passwordErrors = [];
@@ -52,5 +52,32 @@ export default {
       alert("Signup was successful! YOU ARE NOW ESTONIAN!");
     },
   },
-};
+  */
+  SignUp() {
+      var data = {
+        email: this.email,
+        password: this.password
+      };
+      // using Fetch - post method - send an HTTP post request to the specified URI with the defined body
+      fetch("http://localhost:3000/auth/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+          credentials: 'include', //  Don't forget to specify this if you need cookies
+          body: JSON.stringify(data),
+      })
+      .then((response) => response.json())
+      .then((data) => {
+      console.log(data);
+      this.$router.push("/");
+      //location.assign("/");
+      })
+      .catch((e) => {
+        console.log(e);
+        console.log("error");
+      });
+    },
+  },
+}
 </script>

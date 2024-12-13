@@ -1,7 +1,7 @@
 <template>
     <div class="login-container">
       <h2>Welcome to Estonia</h2>
-      <p>Please sign up</p>
+      <p>Please login or sign up</p>
       <form @submit.prevent="handleSignup">
         <input 
           type="email" 
@@ -20,41 +20,57 @@
         <ul v-if="passwordErrors.length" class="error-message">
           <li v-for="(error, index) in passwordErrors" :key="index">{{ error }}</li>
         </ul>
-        <br />
+        <br/>
       <button type="submit" class="login-button">Login</button>
       </form>
-      <a href="/SingUp">
-        <button role="link" class="signup-link">SignUp</button>
-      </a>
+    </br>
+      <h3>OR</h3>
+    </br>
+      <button @click='this.$router.push("/signup")' class="login-button">Signup</button>
       <h3>Forgot password?</h3>
     </div>
   </template>
   
   <script>
-  import { validatePassword } from "@/js/signup.js";
-  
   export default {
-    data() {
-      return {
-        email: "",
-        password: "",
-        passwordErrors: [],
+name: "LogIn", 
+
+data: function() {
+    return {
+   email: '',
+   password: '',
+  }
+  },
+  methods: {
+
+
+LogIn() {
+      var data = {
+        email: this.email,
+        password: this.password
       };
+      // using Fetch - post method - send an HTTP post request to the specified URI with the defined body
+      fetch("http://localhost:3000/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+          credentials: 'include', //  Don't forget to specify this if you need cookies
+          body: JSON.stringify(data),
+      })
+      .then((response) => response.json())
+      .then((data) => {
+      console.log(data);
+      //this.$router.push("/");
+      location.assign("/");
+      })
+      .catch((e) => {
+        console.log(e);
+        console.log("error");
+      });
     },
-    methods: {
-      handleSignup() {
-        // Clear previous error
-        this.passwordErrors = [];
-  
-        // Validate password
-        this.passwordErrors = validatePassword(this.password)
-        if(this.passwordErrors.length){
-          return;
-        }
-        
-        alert("Signup was successful! YOU ARE NOW ESTONIAN!");
-      },
-    },
-  };
+  }, 
+  }
+
   </script>
   
