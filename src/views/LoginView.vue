@@ -21,12 +21,11 @@
           <li v-for="(error, index) in passwordErrors" :key="index">{{ error }}</li>
         </ul>
         <br />
-        <div class = "buttons">
       <button type="submit" class="login-button">Login</button>
-      <a href="/SignUp">
-        <button class="signup-link">SignUp</button>
-      </a></div>
       </form>
+      <a href="/SingUp">
+        <button role="link" class="signup-link">SignUp</button>
+      </a>
       <h3>Forgot password?</h3>
     </div>
   </template>

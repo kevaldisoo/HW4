@@ -20,7 +20,7 @@
       <ul v-if="passwordErrors.length" class="error-message">
         <li v-for="(error, index) in passwordErrors" :key="index">{{ error }}</li>
       </ul>
-      <br />
+      <br/>
       <button type="submit" class="login-button">Sign Up</button>
     </form>
     <h3>Forgot password?</h3>
