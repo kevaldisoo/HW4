@@ -5,6 +5,7 @@
             <ul>
                 <li><router-link to="/">Posts</router-link></li>
                 <li><router-link to="/Login">Login</router-link></li>
+                <li><router-link to ="/Contacts">Contacts</router-link></li>
             </ul>
         </nav>
     </div>
