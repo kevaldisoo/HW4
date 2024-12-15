@@ -11,22 +11,28 @@ const actions = {
     async fetchPosts({ commit }) {
         try {
             if (state.posts.length === 0) {
-                const response = await fetch('/posts.json');
+                const response = await fetch('/api/posts'); 
                 if (!response.ok) {
-                  throw new Error('HTTP error! Status: ${response.status}');
+                    throw new Error(`HTTP error! Status: ${response.status}`);
                 }
-                const data = await response.json();
-                commit('setPosts', data.posts);
-              }
+                const data = await response.json(); 
+                commit('setPosts', data); 
+            }
         } catch (error) {
             console.error('Error fetching posts: ', error)
         }
     },
-    incrementLike({commit}, postId) {
-        commit('incrementLike', postId)
-    },
-    resetLikes({commit}) {
-        commit('resetLikes');
+    
+    
+
+    async logout ({ commit }) {
+        try {
+            await fetch('/logout', {method: 'POST' });
+            commit ('clearState');
+            window.location.href = '/login'
+        } catch (error) {
+            console.error('Error logging out: ', error);
+        }
     }
 };
 
@@ -35,19 +41,11 @@ const mutations = {
         state.posts = posts;
         
     },
-    incrementLike: (state, postId) => {
-        const post = state.posts.find((post) => post.id === postId);
-        if (post) {
-            post.likes++;
-            localStorage.setItem('posts', JSON.stringify(state.posts));
-        } 
-    },
-    resetLikes: (state) => {
-        state.posts.forEach(post => {
-            post.likes = 0;
-        })
-        localStorage.setItem('posts', JSON.stringify(state.posts));
-    }
+
+    clearState: (state => {
+        state.posts = [];
+        localStorage.clear();
+    })
 };
 
 export default {
