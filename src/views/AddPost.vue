@@ -19,12 +19,11 @@ export default {
   },
   methods: {
     addPost() {
-      var data = {
-        title: this.post.title,
-        body: this.post.body,
+      const data = {
+        content: this.post.body,
       };
       // using Fetch - post method - send an HTTP post request to the specified URI with the defined body
-      fetch("http://localhost:3000/api/posts", {
+      fetch("http://localhost:3000/posts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -32,14 +31,18 @@ export default {
         body: JSON.stringify(data),
       })
       .then((response) => {
-        console.log(response.data);
-        // redirect to /allposts view
-        this.$router.push("/");
-      })
-      .catch((e) => {
-        console.log(e);
-        console.log("error");
-      });
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.text(); 
+        })
+        .then((data) => {
+          console.log("Response text:", data);
+          this.$router.push("/");
+        })
+        .catch((e) => {
+          console.error("Error adding post:", e);
+        });
     },
   },
 };
