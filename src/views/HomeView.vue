@@ -72,7 +72,7 @@ export default {
 
     
     viewPost(postId) {
-      this.$router.push(`/posts/${postId}`); 
+      this.$router.push(`api/apost/${postId}`); 
     },
   }, 
   mounted() {

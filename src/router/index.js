@@ -40,6 +40,7 @@ const routes = [
     path: "/api/apost/:id",
     name: "APost",
     component: APost,
+    props: true,
   },
   {
       path: "/api/addpost",

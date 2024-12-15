@@ -26,40 +26,54 @@ export default {
   methods: {
     fetchAPost(id) {
       // fetch one post with the specied id (id)
-      fetch(`http://localhost:3000/api/posts/${id}`)
+      fetch(`http://localhost:3000/posts/${id}`)
         .then((response) => response.json())
         .then((data) => (this.post = data))
         .catch((err) => console.log(err.message));
     },
     updatePost() {
-      // using Fetch - put method - updates a specific post based on the passed id and the specified body
-      fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
-        method: "PUT",
+      console.log('Updating post with data:', this.post);
+
+      if (!this.post.id) {
+        console.log('Post ID is missing!');
+        return;
+      }
+
+  
+
+      fetch(`http://localhost:3000/posts/${this.post.id}`, {
+        method: "PUT", 
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(this.post),
+        body: JSON.stringify({
+          content: this.post.body,
+        }),
       })
         .then((response) => {
-          console.log(response.data);
-          //this.$router.push("/apost/" + this.post.id);
-          // We are using the router instance of this element to navigate to a different URL location
-          this.$router.push("/api/allposts");
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log('Post updated successfully:', data);
+          this.$router.push(`/`);
         })
         .catch((e) => {
-          console.log(e);
+          console.log('Error updating post:', e);
         });
     },
     deletePost() {
       // using Fetch - delete method - delets a specific post based on the passed id
-      fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
+      fetch(`http://localhost:3000/posts/${this.post.id}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       })
         .then((response) => {
           console.log(response.data);
           // We are using the router instance of this element to navigate to a different URL location
-          this.$router.push("/api/allposts");
+          this.$router.push("/");
         })
         .catch((e) => {
           console.log(e);
