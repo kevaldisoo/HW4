@@ -4,10 +4,10 @@
       <h3>A Post</h3>
       <label for="body">Body: </label>
       <input name="body" type="text" id="body" required v-model="post.body" />
-    </div>
-    <div>
+      <div class="buttons">
       <button @click="updatePost" class="updatePost">Update Post</button>
       <button @click="deletePost" class="deletePost">Delete Post</button>
+    </div>
     </div>
   </div>
 </template>
@@ -92,9 +92,9 @@ export default {
 
 <style scoped>
 #form {
-  max-width: 420px;
+  max-width: 420px;;
   margin: 30px auto;
-  background: rgb(167, 154, 154);
+  background: lightcoral;
   text-align: left;
   padding: 40px;
   border-radius: 10px;
@@ -128,5 +128,9 @@ button {
   margin-top: 20px;
   color: white;
   border-radius: 20px;
+}
+.buttons{
+  display: flex;
+ justify-content: space-between
 }
 </style>

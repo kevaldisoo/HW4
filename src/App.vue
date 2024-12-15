@@ -30,19 +30,9 @@ html, body {
   background-color: rgb(46, 46, 187);
   overflow-x: hidden;
   width: 100%;
-  background-image: url('@/assets/snow.gif');
+  background-image: url('https://media1.tenor.com/m/khco1lCOriwAAAAd/christmas-is-coming-christmas-tree.gif');
   background-size: cover;
   background-position: center;
-}
-
-.layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Ensures the layout spans the full height */
-}
-
-.content {
-  flex: 1;
 }
 
 #app {
@@ -51,11 +41,13 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: flex;
+  flex-direction: column;
 }
 
 nav {
   padding: 20px;
-  background-color: antiquewhite;
+  background-color: lightblue;
 }
 
 nav a {
@@ -73,7 +65,8 @@ nav a.router-link-exact-active {
 .login-container {
     max-width: 400px;
     max-height: 600px;
-    margin: 50px auto;
+    margin: 30px auto;
+    margin-bottom: 30px auto;
     padding: 10px;
     border-radius: 25px;
     background-color: lightskyblue;
@@ -138,11 +131,11 @@ nav a.router-link-exact-active {
     margin: 50px auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    
     padding: 20px;
-    background-color: rgb(20, 20, 20);
+    background-color: rgb(3, 108, 10);
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    min-height: 50vh;
 }
 </style>

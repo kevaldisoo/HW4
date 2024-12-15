@@ -1,6 +1,6 @@
 <template>
   <div class="login-container">
-    <h2>Welcome to Estonia</h2>
+    <h2>Welcome to Winter Wonderland</h2>
     <p>Please sign up</p>
       <input 
         type="email" 

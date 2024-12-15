@@ -20,13 +20,13 @@
     }
 </script>
 
-<style scoped>
+<style>
     .footer {
         background: #343a40;
         color: white;
         padding: 30px;
         text-align: center;
-        position: fixed;
+        position: relative;
         bottom: 0;
         width: 100%;
         gap: 20px;
