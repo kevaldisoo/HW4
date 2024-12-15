@@ -3,37 +3,37 @@ import HomeView from '../views/HomeView.vue'
 import SignUp from "../views/SignUpView.vue";
 import Login from "../views/LoginView.vue";
 import Contacts from "../views/ContactView.vue";
+import auth from "../auth";
 
 const routes = [
   {
     path: '/',
-    name: 'posts',
+    name: 'home',
     component: HomeView,
     beforeEnter: async(to, from, next) => {
       let authResult = await auth.authenticated();
       if (!authResult) {
-          next('/login')
+          next('/login');
       } else {
           next();
       }
-  }
+    }
   },
-  
   {
-    path: '/SignUp',
-    name: 'signUp',
+    path: '/signup',
+    name: 'SignUp',
     component: SignUp
   },
   {
-    path: '/Login',
-    name: 'login',
+    path: '/login',
+    name: 'Login',
     component: Login
   },
   {
-    path: '/Contacts',
-    name: 'contacts',
+    path: '/contacts',
+    name: 'Contacts',
     component: Contacts
-  }
+  },
 ]
 
 const router = createRouter({

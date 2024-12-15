@@ -39,9 +39,7 @@ data: function() {
   }
   },
   methods: {
-
-
-LogIn() {
+    LogIn() {
       var data = {
         email: this.email,
         password: this.password

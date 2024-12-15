@@ -1,23 +1,18 @@
 <template>
-    <div>
-        <div class="layout">
-          <Header :logo="logoPath"></Header>
-                <div class="content">
-                    <router-view/>
-                </div>
-          <Footer :logo="logoPath"></Footer>
-        </div>
-    </div>
+  <nav>
+    <router-link to="/">Home</router-link> | 
+    <router-link to="/contacts">Contacts</router-link>
+  </nav>
+  <router-view />
+  <Footer :logo="logoPath"></Footer>
 </template>
 
 <script>
-import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
 
 export default {
   name: 'App',
   components: {
-    Header, 
     Footer
   },
   data(){

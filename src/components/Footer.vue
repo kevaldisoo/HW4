@@ -26,7 +26,7 @@
         color: white;
         padding: 30px;
         text-align: center;
-        position: static;
+        position: fixed;
         bottom: 0;
         width: 100%;
         gap: 20px;

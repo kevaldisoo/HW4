@@ -1,7 +1,7 @@
 <template>
     <div class="home-page">
         <header class="home-header">
-          <button @click="logoutUser" class="btn">Log out</button>
+          <button v-if = "authResult" @click="logout" class="btn">Log out</button>
         </header>
         <div class="posts">
           <div v-for="post in posts" :key="post.id" class="post-item" @click="viewPost(post.id)">
@@ -36,7 +36,7 @@ export default {
     }
   },
   methods: {
-    Logout() {
+    logout() {
       fetch("http://localhost:3000/auth/logout", {
           credentials: 'include', //  Don't forget to specify this if you need cookies
       })
