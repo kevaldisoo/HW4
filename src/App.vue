@@ -55,6 +55,7 @@ html, body {
 
 nav {
   padding: 20px;
+  background-color: antiquewhite;
 }
 
 nav a {

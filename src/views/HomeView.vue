@@ -54,7 +54,7 @@ export default {
       });
     },
     navigateToAddPost() {
-      this.$router.push('/add-post'); 
+      this.$router.push('/api/addpost'); 
     },
 
     
@@ -74,15 +74,15 @@ export default {
 
     
     viewPost(postId) {
-      this.$router.push(`/post/${postId}`); 
+      this.$router.push(`api/posts/${postId}`); 
     },
   }, 
   mounted() {
-        fetch('http://localhost:3000/api/posts')
-        .then((response) => response.json())
-        .then(data => this.posts = data)
-        .catch(err => console.log(err.message))
-    }
+    fetch('http://localhost:3000/api/posts')
+    .then((response) => response.json())
+    .then(data => this.posts = data)
+    .catch(err => console.log(err.message))
+  }
 };
 </script>
 

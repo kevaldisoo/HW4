@@ -3,6 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import SignUp from "../views/SignUpView.vue";
 import Login from "../views/LoginView.vue";
 import Contacts from "../views/ContactView.vue";
+import AddPost from '../views/AddPost.vue';
+import APost from '../views/APost.vue';
 import auth from "../auth";
 
 const routes = [
@@ -34,6 +36,16 @@ const routes = [
     name: 'Contacts',
     component: Contacts
   },
+  {
+    path: "/api/apost/:id",
+    name: "APost",
+    component: APost,
+  },
+  {
+      path: "/api/addpost",
+      name: "AddPost",
+      component: AddPost,
+  }
 ]
 
 const router = createRouter({
